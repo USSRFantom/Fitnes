@@ -32,7 +32,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+        JSONArray jsonArray= NetworkUtils.getJSONFromNetwork();
+        ArrayList<Lessons> lessons =  JSONUtils.getLessonsFromJSON(jsonArray);
+        StringBuilder builder = new StringBuilder();
+        for (Lessons lessons1 : lessons) {
+            builder.append(lessons1.getAppointment_id()).append("\n");
+            builder.append(lessons1.getName()).append("\n");
+            builder.append(lessons1.getStartTime()).append("\n");
+            builder.append(lessons1.getEndTime()).append("\n");
+            builder.append(lessons1.getTeacher()).append("\n");
+            builder.append(lessons1.getPlace()).append("\n");
+            builder.append(lessons1.getDescription()).append("\n");
+            builder.append(lessons1.getWeekDay()).append("\n");
+        }
+        Log.i("MyResults", builder.toString());
 
 
 
@@ -44,15 +57,9 @@ public class MainActivity extends AppCompatActivity {
 }
 
   //
-       /* JSONArray jsonArray= NetworkUtils.getJSONFromNetwork();
-        ArrayList<Lessons> lessons =  JSONUtils.getLessonsFromJSON(jsonArray);
-        StringBuilder builder = new StringBuilder();
-        for (Lessons lessons1 : lessons) {
-            builder.append(lessons1.getDescription()).append("\n");
-        }
-        Log.i("MyResults", builder.toString());
 
-        */
+
+
 
 
 /* Проверка сборки url
