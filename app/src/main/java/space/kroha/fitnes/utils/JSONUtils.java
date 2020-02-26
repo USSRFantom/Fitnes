@@ -43,7 +43,7 @@ public class JSONUtils {
             int weekDay = objectLesson.getInt(KYE_WEEK_DAY);
             String appointment_id = objectLesson.getString(KYE_APPOINTMENT_ID);
             String descritpion = objectLesson.getString(KYE_DESCRIPTION);
-            Lessons lessons = new Lessons(appointment_id, name, startTime, endTime, teacher, place, descritpion, weekDay);
+            Lessons lessons = new Lessons(name, startTime, endTime, teacher, place, descritpion, weekDay);
             result.add(lessons);
             }
             } catch (JSONException e) {
