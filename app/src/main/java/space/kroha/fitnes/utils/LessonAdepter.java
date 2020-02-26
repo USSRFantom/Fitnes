@@ -24,7 +24,7 @@ public class LessonAdepter extends RecyclerView.Adapter<LessonAdepter.LessonView
     @Override
     public LessonViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_lesson_item, viewGroup, false);
-        return  new LessonViewHolder(view);
+        return new LessonViewHolder(view);
     }
 
     @Override
@@ -37,6 +37,25 @@ public class LessonAdepter extends RecyclerView.Adapter<LessonAdepter.LessonView
         lessonViewHolder.textViewPlace.setText(lessons1.getPlace());
         lessonViewHolder.textViewDescription.setText(lessons1.getDescription());
         lessonViewHolder.textViewWeekDay.setText(String.format("%s", lessons1.getWeekDay()));
+
+        //Изменяем цвет шапки в зависимости от типа занятий
+        int colorId = 0;
+        String nameColor = lessons1.getName();
+
+        //Можно добавить если появятся еще уроки
+        switch (nameColor) {
+
+
+            case "Stretch":
+                colorId = lessonViewHolder.itemView.getResources().getColor(android.R.color.holo_red_light);
+                break;
+
+            default:
+                System.out.println("ЗАЩДЛ <----------------------------");
+                colorId = lessonViewHolder.itemView.getResources().getColor(android.R.color.holo_blue_light);
+                break;
+        }
+        lessonViewHolder.textViewName.setBackgroundColor(colorId);
     }
 
     @Override
@@ -44,7 +63,7 @@ public class LessonAdepter extends RecyclerView.Adapter<LessonAdepter.LessonView
         return lessons.size();
     }
 
-    class LessonViewHolder extends RecyclerView.ViewHolder{
+    class LessonViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewName;
         private TextView textViewStartTime;

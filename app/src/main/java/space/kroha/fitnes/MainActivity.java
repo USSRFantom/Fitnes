@@ -38,11 +38,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewLessons = findViewById(R.id.recyclerViewLessons);
 
 
-
-
-
-        JSONArray jsonArray= NetworkUtils.getJSONFromNetwork();
-        ArrayList<Lessons> lessons =  JSONUtils.getLessonsFromJSON(jsonArray);
+        JSONArray jsonArray = NetworkUtils.getJSONFromNetwork();
+        ArrayList<Lessons> lessons = JSONUtils.getLessonsFromJSON(jsonArray);
         StringBuilder builder = new StringBuilder();
         /*for (Lessons lessons1 : lessons) {
             builder.append(lessons1.getAppointment_id()).append("\n");
@@ -61,16 +58,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewLessons.setAdapter(adepter);
 
 
-
-
-
-
-
     }
 
 }
 
-  //
+//
 
 
 

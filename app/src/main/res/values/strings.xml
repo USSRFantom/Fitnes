@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Fitnes</string>
+    <string name="day_of_the_week">День недели</string>
+    <string name="Description_of_the_lesson">Описание занятия</string>
+    <string name="Teacher">Преподаватель</string>
+    <string name="End_lesson">Конец занятия</string>
+    <string name="Start_lesson">Начало занятия</string>
 </resources>

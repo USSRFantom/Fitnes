@@ -11,8 +11,6 @@ public class Lessons {
     private int weekDay;   //день недели
 
 
-
-
     public Lessons(String appointment_id, String name, double startTime, double endTime, String teacher, String place, String description, int weekDay) {
         this.appointment_id = appointment_id;
         this.name = name;
