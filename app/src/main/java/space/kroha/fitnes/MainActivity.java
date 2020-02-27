@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             Lessons lessons1 = new Lessons(name, start, end, teacher, place, description, week);
             lessonsFromDB.add(lessons1);
         }
+        cursor.close();
 
 
         LessonAdepter adepter = new LessonAdepter(lessonsFromDB);
